@@ -2,13 +2,14 @@ async function editFormHandler(event){
 
     event.preventDefault();
 
-    console.log('create blog')
+    console.log('Edit blog')
     
     const title = document.querySelector('input[name="blog-title"]').value;
     const content = document.querySelector('textarea[name="blog-content"]').value;
+    const id = document.querySelector('input[name="blog-id"]').value;
 
-    const response = await fetch(`/api/blogs`, {
-        method: 'POST',
+    const response = await fetch(`/api/blogs/${id}`, {
+        method: 'PUT', // or PATCH
         body: JSON.stringify({
             title,
             content
@@ -25,4 +26,4 @@ async function editFormHandler(event){
     }
 }
 
-document.querySelector('.new-blog-form').addEventListener('submit', editFormHandler)
+document.querySelector('.edit-blog-form').addEventListener('submit', editFormHandler);

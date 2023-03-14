@@ -32,17 +32,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3]
+        len: [8]
       },
-    },
-    github: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    twitter: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    }
   },
   {
     hooks: {
@@ -53,7 +45,7 @@ User.init(
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
-          10
+          8
         );
         return updatedUserData;
       },
@@ -66,4 +58,4 @@ User.init(
   }
 );
 
-module.exports = User
+module.exports = User;

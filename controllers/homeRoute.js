@@ -53,7 +53,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// SIGNUP
+// Sign up
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

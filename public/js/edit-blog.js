@@ -4,9 +4,9 @@ async function editFormHandler(event){
 
     console.log('Edit blog')
     
-    const title = document.querySelector('input[name="blog-title"]').value;
-    const content = document.querySelector('textarea[name="blog-content"]').value;
-    const id = document.querySelector('input[name="blog-id"]').value;
+    const title = document.querySelector('input[name="blog-title"]')?.value;
+    const content = document.querySelector('textarea[name="blog-content"]')?.value;
+    const id = document.querySelector('input[name="blog-id"]')?.value;
 
     const response = await fetch(`/api/blogs/${id}`, {
         method: 'PUT', // or PATCH

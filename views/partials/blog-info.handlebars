@@ -4,7 +4,7 @@
 
         <div class='col-6'>
             <p class='text-white'></p>
-            <a href='/blogs/{{id}}' class='text-black justify-content-end text-capitalized'>{{title}}</a>
+            <a href='/blogs/{{id}}' class='text-black justify-content-end text-capitalized card-title'>{{title}}</a>
         </div>
 
         <div class='col-9'>
@@ -13,7 +13,7 @@
     </header>
 
     <div class='card-content'>
-        <div class='content text-center'>{{content}}</div>
+        <div class='content text-center card-text'>{{content}}</div>
         <div class='d-flex justify-content-end'>
             <b>{{user.username}}</b> |
             | {{format_date created_at}} | <a href='/blogs/{{id}}'>{{comments.length}} {{format_plural "comment"

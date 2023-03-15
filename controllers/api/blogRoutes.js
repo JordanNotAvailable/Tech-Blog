@@ -87,11 +87,9 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// UPDATE a blog by id
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const blogData = await Blog.update(
-      req.body,
+    const [numRowsAffected, [updatedBlog]] = await Blog.update(
       {
         title: req.body.title,
         content: req.body.content,
@@ -100,12 +98,13 @@ router.put('/:id', withAuth, async (req, res) => {
         where: {
           id: req.params.id,
         },
+        returning: true, // Return the updated blog object
       }
     );
-    if (!blogData) {
+    if (numRowsAffected === 0) {
       res.status(404).json({ message: 'No blog found with this id' });
     }
-    res.status(200).json(blogData);
+    res.status(200).json(updatedBlog);
   } catch (err) {
     res.status(500).json(err);
   }

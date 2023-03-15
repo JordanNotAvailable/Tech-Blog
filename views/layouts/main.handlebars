@@ -9,13 +9,13 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {{!-- Font awesome --}}
     <script src="https://kit.fontawesome.com/b210927ee1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./public/css/jass.css">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <div class='wrapper d-flex justify-space-around'>
       <nav>
-        <h1 class=' d-flex align-center p-2 m-4'>Tech Talks: A Tech Blog
+        <h1 class=' d-flex align-center p-2 m-4'>Tech Blog: A place to express your thoughts
           <span role="img" class='m-4' aria-label="writing-hand">✍️</span>
         </h1>
         <nav class='navbar mt-2'></nav>
@@ -23,16 +23,16 @@
         {{#if loggedIn}}
 
         {{!-- When logged in show the below navbar --}}
-        <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>homepage</a>
-        <a href="/dashboard" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>dashboard</a>
-        <a href="/dashboard/create/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1 mr-4'>create a blog</a>
-        <button id='logout' class='btn btn-danger'>logout</button>
+        <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>Homepage</a>
+        <a href="/dashboard" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>Dashboard</a>
+        <a href="/dashboard/create/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1 mr-4'>Create a blog</a>
+        <button id='logout' class='btn btn-danger'>Logout</button>
 
         {{else}}
       
         {{!-- If not logged in then show homepage --}}
-        <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>homepage</a>
-        <a href="/login" class='btn btn-primary'>login</a>
+        <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>Homepage</a>
+        <a href="/login" class='btn btn-primary'>Login</a>
       
         {{/if}}
 
@@ -43,19 +43,19 @@
         {{{ body }}}
       </main>
     
-      <footer class='container pb-2'>
+      <footer class='container bottoming pb-2'>
         <div class='col-2 d-flex justify-space-between'>
           <p>
-            <a href='/'>homepage</a>
+            <a class='part-footer' href='/'>Homepage</a>
             
             {{#if loggedIn}} |
 
-            <a href='/dashboard/'>dashboard</a> |
-            <a href='/dashboard/create/'>create a new blog</a>
+            <a class='part-footer' href='/dashboard/'>Dashboard</a> |
+            <a class='part-footer' href='/dashboard/create/'>Create a new blog</a>
           
             {{else}}
           
-            <a href='/login/'>login</a>
+            <a href='/login/'>Login</a>
           
             {{/if}}
           </p>
@@ -63,7 +63,7 @@
 
         <div class='col-8 d-flex justify-space-between'>
           <p>
-            <strong> Tech Blog </strong> by <a href='https://github.com/JordanNotAvailable'>Jordan O'Grady</a> | made with <a href='https://getbootstrap.com/'>bootstrap-4</a> | source code: 
+            <strong> Tech Blog </strong> by <a href='https://github.com/JordanNotAvailable'>Jordan O'Grady</a> | source code: 
             <a href='https://github.com/JordanNotAvailable/Tech-Blog'><i class='far fa-envelope'></i></a>
           </p>
         </div>

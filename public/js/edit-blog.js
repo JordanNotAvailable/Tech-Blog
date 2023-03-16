@@ -7,6 +7,8 @@ async function editFormHandler(event){
     const id = document.querySelector('input[name="blog-id"]')?.value;
 
     console.log(id)
+    console.log(content)
+    console.log(title)
 
     const response = await fetch(`/api/blogs/${id}`, {
         method: 'PUT', // or PATCH

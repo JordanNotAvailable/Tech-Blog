@@ -89,24 +89,17 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const [numRowsAffected, [updatedBlog]] = await Blog.update(
-      {
-        title: req.body.title,
-        content: req.body.content,
-      },
+    console.log(req.body)
+    const [updatedBlog] = await Blog.update(req.body,
       {
         where: {
           id: req.params.id,
         },
-        returning: true, // Return the updated blog object
       }
     );
-    if (numRowsAffected === 0) {
-      res.status(404).json({ message: 'No blog found with this id' });
-    }
-    res.status(200).json(updatedBlog);
+    res.status(200).end();
   } catch (err) {
-    res.status(500).json(err);
+    res.status(502).json(err);
   }
 });
 

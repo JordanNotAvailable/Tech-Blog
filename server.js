@@ -45,6 +45,7 @@ sequelize.sync({ force: false}).then(() => {
 });
 
 
+
 // fix update of blog
 // fix styling of blog posts in list
 // deploy to heroku

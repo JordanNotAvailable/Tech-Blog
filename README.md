@@ -68,4 +68,4 @@ Below is a demo gif of the site :
 
 ## **Deployment**
 
-<!--  [This is an external link to the live site jordannotavailable.github.io/project-1/](https://jouriena11/chat-support) -->
+ [This is an external link to the live site tech-blog-jo.herokuapp.com/](https://tech-blog-jo.herokuapp.com/)

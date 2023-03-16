@@ -43,9 +43,3 @@ app.use(routes);
 sequelize.sync({ force: false}).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-
-// fix update of blog
-// fix styling of blog posts in list
-// deploy to heroku

@@ -1,4 +1,4 @@
-# **Tehc Blog**
+# **Tech Blog**
 ---
 
 ## **Description**
